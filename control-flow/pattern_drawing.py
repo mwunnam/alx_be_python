@@ -1,6 +1,8 @@
-number = int(input("Enter the size of the patten "))
+number = int(input("Enter the size of the patten: "))
 
-for x in range(number):
-    for y in range(number):
+row = 0
+while row < number:
+    for x in range(number):
         print("*", end="")
     print()
+    row += 1
