@@ -1,6 +1,6 @@
-number = int(input("Enter the size of the patten "))
+int = int(input("Enter the size of the patten "))
 
-for x in range(number):
-    for y in range(number):
+for x in range(int):
+    for y in range(int):
         print("*", end="")
     print()
