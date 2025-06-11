@@ -14,7 +14,7 @@ def main():
 
         if choice == '1':
             # Prompt for and add an item
-            item = input("Enter what you want to add: ")
+            item = input("Enter the item to add: ")
             if item == None:
                 print("No Item entered")
                 continue
