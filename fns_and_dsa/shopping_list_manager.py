@@ -1,34 +1,54 @@
-#!/usr/bin/python3.10
+def display_menu():
+    print("Shopping List Manager")
+    print("1. Add Item")
+    print("2. Remove Item")
+    print("3. View List")
+    print("4. Exit")
 
-shopping_list = []
 
-while True:
-    print("\nMenu")
-    print(f"1. To add an item \n2. To remove Item\n3. To view List\n4. Exit")
-    user_input = input("What would you like to do: ")
+def main():
+    shopping_list = []
+    while True:
+        display_menu()
+        choice = input("Enter your choice: ")
 
-    match user_input:
-        case "1":
-            item = input("Enter Item to add: ")
-            shopping_list.append(item)
-
-        case "2":
-            item = input("Enter Item you want to remove: ")
-            if input not in shopping_list:
-                print(f"{item} not found in your shopping list")
+        if choice == '1':
+            # Prompt for and add an item
+            item = input("Enter what you want to add: ")
+            if item == None:
+                print("No Item entered")
                 continue
 
-            shopping_list.remove(item)
+            shopping_list.append(item)
+            print(f"{item} added to shopping list\n")
 
-        case "3":
-            for x in shopping_list:
-                print(x)
+        elif choice == '2':
+            # Prompt for and remove an item
+            item = input("Enter the item you want to remove: ")
+            if item == None or item not in shopping_list:
+                print("No Item entered or Item not found\n")
+                continue
 
-            print()
+            else:
+                print(f"{item} removed from shopping list\n")
+                shopping_list.remove(item)
 
-        case "4":
+
+        elif choice == '3':
+            # Display the shopping list
+            if len(shopping_list) == 0:
+                print("Your list is empty\n")
+                continue
+
+            for item in shopping_list:
+                print(item)
+
+        elif choice == '4':
+            print("Goodbye!")
             break
 
-        case _:
-            print("Invalid input")
+        else:
+            print("Invalid choice. Please try again.\n")
 
+if __name__ == "__main__":
+    main()
