@@ -18,6 +18,7 @@ if isinstance(user_input, float):
 else:
     print("Invalid temperature. Please enter a numeric value.")
 
+
 if temp_unit == "C":
     temp = convert_to_fahrenheit(input_temp)
     print(f"{input_temp}{chr(176)}C is {temp}{chr(176)}F")
