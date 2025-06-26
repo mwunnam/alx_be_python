@@ -21,6 +21,9 @@ class Library:
 
         return f"No book with title {title} was found"
 
+    def return_book(self):
+        pass
+
     def return_book(self, title):
         for book in self._books:
             if book.title == title:
